@@ -6,20 +6,11 @@ A fast heuristic for the Euclidean Maximum Weight Non-bipartite Matching problem
 
 ## 🚀 Installation
 
-1. Clone this repository:  
-   ```bash
-   git clone https://github.com/phil85/aba-for-maximum-weight-matching.git
-   cd aba-for-maximum-weight-matching
-   ```
-2. Create and activate a virtual environment:
-    ```
-    python -m venv venv
-    source venv/bin/activate
-    ```
-3. Install the required dependencies:
-    ```
-    pip install -r requirements.txt
-    ```
+1. Clone this repository  
+2. Create and activate a virtual environment
+3. Install the required dependencies (see requirements.txt)
+4. To run Gurobi as a benchmark algorithm, install it from gurobi.com. Please note that Gurobi is a commercial mathematical programming solver, but free academic licenses are available.
+
 ## ⚙️ Usage
 
 To reproduce the experimental results reported in the paper, run:

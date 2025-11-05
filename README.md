@@ -5,6 +5,8 @@ A fast heuristic for the Euclidean maximum weight non-bipartite matching problem
 ## Installation
 
 1) Clone this repository (git clone https://github.com/phil85/aba-for-maximum-weight-matching.git)
+2) Create a virtual environment in the directory
+3) Install the packages listed in the requirements.txt in your virtual environment
 
 ## Usage
 

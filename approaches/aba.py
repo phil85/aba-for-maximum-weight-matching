@@ -1,3 +1,6 @@
+# © 2025, University of Bern, Group for Business Analytics, Operations Research and Quantitative Methods,
+# Philipp Baumann
+
 import numpy as np
 from scipy.spatial.distance import cdist
 from scipy.optimize import linear_sum_assignment

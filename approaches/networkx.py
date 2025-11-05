@@ -1,3 +1,6 @@
+# © 2025, University of Bern, Group for Business Analytics, Operations Research and Quantitative Methods,
+# Philipp Baumann
+
 import numpy as np
 import networkx as nx
 from scipy.spatial.distance import pdist, squareform

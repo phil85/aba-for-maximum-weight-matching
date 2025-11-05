@@ -1,3 +1,6 @@
+# © 2025, University of Bern, Group for Business Analytics, Operations Research and Quantitative Methods,
+# Philipp Baumann
+
 import time
 import pandas as pd
 import numpy as np

@@ -1,22 +1,38 @@
-# aba-for-maximum-weight-matching
+# **ABA for Maximum Weight Matching**
 
-A fast heuristic for the Euclidean maximum weight non-bipartite matching problem 
+A fast heuristic for the Euclidean Maximum Weight Non-bipartite Matching problem.
 
-## Installation
+---
 
-1) Clone this repository (git clone https://github.com/phil85/aba-for-maximum-weight-matching.git)
-2) Create a virtual environment in the directory
-3) Install the packages listed in the requirements.txt in your virtual environment
+## 🚀 Installation
 
-## Usage
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/phil85/aba-for-maximum-weight-matching.git
+   cd aba-for-maximum-weight-matching
+   ```
+2. Create and activate a virtual environment:
+    ```
+    python -m venv venv
+    source venv/bin/activate
+    ```
+3. Install the required dependencies:
+    ```
+    pip install -r requirements.txt
+    ```
+## ⚙️ Usage
 
-The experimental_analysis.py file contains code that reproduces the results we report in our paper.
+To reproduce the experimental results reported in the paper, run:
 
-## Reference
+```
+python experimental_analysis.py
+```
 
-Please cite the following paper if you use this algorithm.
+## 📚 Reference
 
-**Baumann, P.** (2025): A Fast Algorithm for Euclidean Maximum Weight Non-bipartite Matching. submitted 2025
+If you use this algorithm in your research, please cite the following paper:
+
+Baumann, P., Goldschmidt O., Hochbaum D.S. (2025). A Fast Algorithm for Euclidean Maximum Weight Non-bipartite Matching. Submitted, 2025.
 
 Bibtex:
 ```
@@ -29,6 +45,6 @@ Bibtex:
 }
 ```
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details -->

@@ -10,6 +10,7 @@ from approaches.gurobi import run_gurobi
 from approaches.random import run_random
 from approaches.networkx import run_networkx
 from approaches.greedy import run_greedy
+from approaches.anticlust import run_anticlust
 
 # Define results file name
 results_file_name = 'results.csv'
@@ -23,12 +24,15 @@ time_limit = 7200
 # Select approaches
 approaches = [
     'gurobi',
-    'networkx',
+    # 'networkx',
     'aba',
     'greedy',
     'random-1',
     'random-2',
     'random-3',
+    'anticlust-1',    
+    'anticlust-2',    
+    'anticlust-3', 
 ]
 
 # Select datasets
@@ -43,12 +47,12 @@ datasets = [
             'plants-2k',
             'pulsar-2k',
             'travel-2k',
-            'travel',
-            'facebook',
-            'electric',
-            'npi',
-            'pulsar',
-            'creditcard'
+            # 'travel',
+            # 'facebook',
+            # 'electric',
+            # 'npi',
+            # 'pulsar',
+            # 'creditcard'
             ]
 
 # Initialize results
@@ -92,6 +96,16 @@ for dataset in datasets:
                 labels = run_aba(X)
             elif approach == 'greedy':
                 labels = run_greedy(X)
+            elif approach.split('-')[0] == 'anticlust':
+                # Get random seed
+                approach_name, seed = approach.split('-')
+
+                # Run random approach
+                labels, runtime_anticlust = run_anticlust(dataset, int(seed), time_limit=time_limit)
+
+                # Add approach information 
+                new_results['approach'] = approach_name
+                new_results['random_seed'] = seed
             else: 
                 # Get random seed
                 approach_name, seed = approach.split('-')
@@ -104,8 +118,11 @@ for dataset in datasets:
                 new_results['random_seed'] = seed
 
             # Get runtime
-            runtime = time.perf_counter() - tic
-            new_results['runtime'] = runtime
+            if approach.split('-')[0] == 'anticlust':
+                new_results['runtime'] = runtime_anticlust
+            else:
+                runtime = time.perf_counter() - tic
+                new_results['runtime'] = runtime
               
             # Compute total sum of distances within the clusters
             if len(labels) > 0:

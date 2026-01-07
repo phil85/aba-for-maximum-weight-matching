@@ -51,7 +51,7 @@ def main():
 
     labels, cpu = run_networkx(X)
 
-    print(labels, "Elapsed_time = ", cpu)
+    print(np.array2string(labels, threshold=np.inf), "Elapsed_time = ", cpu)
 
 
 if __name__ == "__main__":

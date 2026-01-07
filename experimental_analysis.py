@@ -7,10 +7,10 @@ import numpy as np
 from scipy.spatial.distance import pdist
 from approaches.aba import run_aba
 from approaches.gurobi import run_gurobi
-from approaches.random import run_random
-from approaches.networkx import run_networkx
+from approaches.random_approach import run_random
+from approaches.networkx_approach import run_networkx
 from approaches.greedy import run_greedy
-from approaches.anticlust import run_anticlust
+from approaches.anticlust_approach import run_anticlust
 
 # Define results file name
 results_file_name = 'results.csv'
@@ -24,7 +24,7 @@ time_limit = 7200
 # Select approaches
 approaches = [
     'gurobi',
-    # 'networkx',
+    'networkx',
     'aba',
     'greedy',
     'random-1',
@@ -47,12 +47,12 @@ datasets = [
             'plants-2k',
             'pulsar-2k',
             'travel-2k',
-            # 'travel',
-            # 'facebook',
-            # 'electric',
-            # 'npi',
-            # 'pulsar',
-            # 'creditcard'
+            'travel',
+            'facebook',
+            'electric',
+            'npi',
+            'pulsar',
+            'creditcard'
             ]
 
 # Initialize results
@@ -91,7 +91,7 @@ for dataset in datasets:
                 new_results['mip_gap'] = mip_gap
 
             elif approach == 'networkx':
-                labels = run_networkx(X)
+                labels, runtime_networkx = run_networkx(dataset, time_limit=time_limit)
             elif approach == 'aba':
                 labels = run_aba(X)
             elif approach == 'greedy':
@@ -118,7 +118,9 @@ for dataset in datasets:
                 new_results['random_seed'] = seed
 
             # Get runtime
-            if approach.split('-')[0] == 'anticlust':
+            if approach == 'networkx':
+                new_results['runtime'] = runtime_networkx
+            elif approach.split('-')[0] == 'anticlust':
                 new_results['runtime'] = runtime_anticlust
             else:
                 runtime = time.perf_counter() - tic

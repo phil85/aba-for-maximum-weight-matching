@@ -1,3 +1,6 @@
+# © 2025, University of Bern, Group for Business Analytics, Operations Research and Quantitative Methods,
+# Philipp Baumann
+
 # install.packages("anticlust")
 
 library("anticlust")

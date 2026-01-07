@@ -1,3 +1,6 @@
+# © 2025, University of Bern, Group for Business Analytics, Operations Research and Quantitative Methods,
+# Philipp Baumann
+
 import re
 import subprocess, os, signal
 import numpy as np
@@ -41,7 +44,7 @@ def run_anticlust(file_name, random_seed, time_limit=None):
 
     try:
         # Define command
-        cmd = ["Rscript", "approaches/anticlust_interface.R", file_name, str(random_seed)]
+        cmd = ["Rscript", "approaches/anticlust_script.R", file_name, str(random_seed)]
         
         # Execute command with time limit
         stdout = run_r_with_timeout(cmd, time_limit)
@@ -51,7 +54,7 @@ def run_anticlust(file_name, random_seed, time_limit=None):
 
     except:
         print("Process exceeded time limit and was killed.")
-        return {'labels': [], 'runtime': float(time_limit)}
+        return [], float(time_limit)
 
     try:
         # Extract running time

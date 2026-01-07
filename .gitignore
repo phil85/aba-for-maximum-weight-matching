@@ -2,3 +2,4 @@ pyproject.toml
 results.csv
 uv.lock
 *.DS_Store
+*.csv

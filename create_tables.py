@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load results
-df = pd.read_csv('results.csv')
+df = pd.read_csv('results copy.csv')
 # Get best result for each dataset
 
 best_results = df.groupby('dataset')['sum_distances_within'].max()
@@ -31,9 +31,13 @@ table['random'] = random_values.round(2)
 
 # Use styler
 styler = table.style
+styler = styler.format(na_rep='\\NA', precision=2)
+styler = styler.hide(axis='index')
+
 latex_str = styler.to_latex()
+
+# 
 
 # Save to file
 with open('results_table.tex', 'w') as f:
     f.write(latex_str)
-    

@@ -1,8 +1,13 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 
 # Load results
-df = pd.read_csv('results copy.csv')
+df = pd.read_csv('results_mac_studio.csv')
+
+# Export to CSV
+df.to_csv('results_mac_studio.csv', index=False)
+
 
 # Replace names of datasets
 df['dataset'] = df['dataset'].replace({
@@ -146,8 +151,7 @@ idx = df.loc[df['approach'] == 'gurobi', :].groupby('dataset')['sum_distances_wi
 gurobi_values.loc[idx] = pd.NA
 
 idx = df.loc[df['approach'] == 'anticlust', :].groupby('dataset')['sum_distances_within'].first().isna()
-for entry in idx.index[idx]:
-    papenberg_values.loc[entry] = pd.NA
+papenberg_values.loc[idx] = pd.NA
 
 # Prepare table
 table = pd.DataFrame(columns=['Dataset', 'n', 'd', 'aba', 'gurobi', 'networkx', 'papenberg', 'greedy'], index=n_values.sort_values().index)
@@ -202,9 +206,7 @@ idx = df.loc[df['approach'] == 'gurobi', :].groupby('dataset')['sum_distances_wi
 gurobi_values.loc[idx] = pd.NA
 
 idx = df.loc[df['approach'] == 'anticlust', :].groupby('dataset')['sum_distances_within'].first().isna()
-for entry in idx.index[idx]:
-    papenberg_values.loc[entry] = pd.NA
-
+papenberg_values.loc[idx] = pd.NA
 
 fig, ax = plt.subplots(figsize=(10, 4))
 
@@ -229,16 +231,9 @@ ax.legend(
     ncol=4,
     frameon=False
 )
-
-import numpy as np
-
-ax.set_yscale("log")
-
 ax.relim()
 ax.autoscale_view()
-
 ymin, ymax = ax.get_ylim()
-ax.set_ylim(0, ymax)
 
 def add_nan_bars(x_positions, values, offset, color):
     for i, v in enumerate(values):

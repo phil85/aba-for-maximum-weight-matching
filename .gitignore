@@ -13,3 +13,6 @@ uv.lock
 *.pdf
 *.tex
 *.Rhistory
+*.bkp
+*.dtmp
+*.drawio

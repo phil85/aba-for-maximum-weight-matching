@@ -29,16 +29,21 @@ python experimental_analysis.py
 
 If you use this algorithm in your research, please cite the following paper:
 
-Baumann, P., Goldschmidt O., Hochbaum D.S. (2025). A Fast Algorithm for Euclidean Maximum Weight Non-bipartite Matching. Submitted, 2025.
+Baumann, P., Goldschmidt O., Hochbaum D.S. (2025). A Fast Algorithm for Euclidean Maximum Weight Non-bipartite Matching. In Proceedings of the 15th International Conference on Pattern Recognition Applications and Methods - ICPRAM, SciTePress, pages 411-418.
 
 Bibtex:
 ```
 @inproceedings{baumann2025fast,
 	author={Philipp Baumann and Olivier Goldschmidt and Dorit S. Hochbaum},
-	booktitle={Proceedings of the 2026 International Conference on Pattern Recognition Applications and Methods},
 	title={A Fast Algorithm for Euclidean Maximum Weight Non-bipartite Matching},
-	year={2025},
-    note={under review}
+	booktitle={Proceedings of the 15th International Conference on Pattern Recognition Applications and Methods - ICPRAM},
+	year={2026},
+	pages={411-418},
+	publisher={SciTePress},
+	organization={INSTICC},
+	doi={10.5220/0014406600004067},
+	isbn={978-989-758-797-9},
+	issn={2184-4313},	
 }
 ```
 

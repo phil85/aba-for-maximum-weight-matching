@@ -17,7 +17,7 @@ Maximum weight matching (MWM) on general (non-bipartite) graphs can be solved in
 3. Install the required dependencies (see requirements.txt)
 4. To run Gurobi as a benchmark algorithm, install it from gurobi.com. Please note that Gurobi is a commercial mathematical programming solver, but free academic licenses are available.
 
-## ⚙️ Usage
+## Usage
 
 To reproduce the experimental results reported in the paper, run:
 

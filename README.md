@@ -6,11 +6,11 @@
 
 # **ABA for Maximum Weight Matching**
 
-A fast heuristic for the Euclidean Maximum Weight Non-bipartite Matching problem.
+Maximum weight matching (MWM) on general (non-bipartite) graphs can be solved in polynomial time, but exact algorithms do not scale well to large datasets. This repository provides a fast heuristic for MWM on graphs where nodes are vectors in a d-dimensional space and edge weights are based on Euclidean or other metric distances. The approach builds on the [Assignment-Based Anticlustering (ABA) algorithm](https://github.com/phil85/aba).
 
 ---
 
-## 🚀 Installation
+## Installation
 
 1. Clone this repository  
 2. Create and activate a virtual environment
@@ -25,7 +25,7 @@ To reproduce the experimental results reported in the paper, run:
 python experimental_analysis.py
 ```
 
-## 📚 Reference
+## Reference
 
 If you use this algorithm in your research, please cite the following paper:
 
@@ -47,6 +47,6 @@ Bibtex:
 }
 ```
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
